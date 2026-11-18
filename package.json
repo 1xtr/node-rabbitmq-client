@@ -1,14 +1,14 @@
 {
-  "name": "rabbitmq-client",
-  "version": "5.1.1",
+  "name": "@1xtr/rabbitmq-client",
+  "version": "5.2.0",
   "description": "Robust, typed, RabbitMQ (0-9-1) client library",
   "engines": {
     "node": ">=16"
   },
-  "homepage": "https://github.com/cody-greene/node-rabbitmq-client",
+  "homepage": "https://github.com/1xtr/node-rabbitmq-client",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cody-greene/node-rabbitmq-client.git"
+    "url": "git+https://github.com/1xtr/node-rabbitmq-client.git"
   },
   "keywords": [
     "amqp",
@@ -21,6 +21,9 @@
   "files": [
     "lib/"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "prepublishOnly": "rm -rf lib && tsc -p tsconfig.build.json",
     "test": "node -r ts-node/register --test test/*.ts"
