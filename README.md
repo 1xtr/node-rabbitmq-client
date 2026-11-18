@@ -1,6 +1,16 @@
-[![npm version](https://badge.fury.io/js/rabbitmq-client.svg)](https://badge.fury.io/js/rabbitmq-client)
+[![npm version](https://badge.fury.io/js/@1xtr%2Frabbitmq-client.svg)](https://www.npmjs.com/package/@1xtr/rabbitmq-client)
 
 ## RabbitMQ Client
+
+> This is a fork of [rabbitmq-client](https://github.com/cody-greene/node-rabbitmq-client)
+> by Cody Greene. It adds `ConsumerStatus.REJECT` (BasicReject with requeue=true),
+> so the `x-delivery-limit` argument of quorum queues applies (RabbitMQ 4.3+).
+> Upstream pull request: [#93](https://github.com/cody-greene/node-rabbitmq-client/pull/93).
+>
+> ```
+> npm install @1xtr/rabbitmq-client
+> ```
+
 Node.js client library for [RabbitMQ](https://www.rabbitmq.com/documentation.html). Publish
 messages, declare rules for routing those messages into queues, consume messages from queues.
 
@@ -33,7 +43,7 @@ In addition to the lower-level RabbitMQ methods, this library exposes two main
 interfaces, a `Consumer` and a `Publisher` (which should cover 90% of uses
 cases), as well as a third `RPCClient` for request-response communication.
 ```javascript
-import {Connection} from 'rabbitmq-client'
+import {Connection} from '@1xtr/rabbitmq-client'
 
 // Initialize:
 const rabbit = new Connection('amqp://guest:guest@localhost:5672')
